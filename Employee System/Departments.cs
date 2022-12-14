@@ -28,6 +28,10 @@ namespace Employee_System
         {
 
         }
+        public void clear()
+        {
+            DepNameTb.Text = "";
+        }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -40,15 +44,15 @@ namespace Employee_System
                 else
                 {
                     string Dep = DepNameTb.Text;
-                    string Query = "insert into DepartTbl value ('{0}')";
-                    Query = string.Format(Query,DepNameTb.Text);
+                    string Query = "insert into DepartTbl values ('{0}')";
+                    Query = string.Format(Query,Dep);
                     Con.SetData(Query);
-                    ShowDepartment();
                     MessageBox.Show("Added...");
-                    DepNameTb.Text = "";
+                    ShowDepartment();
+                    clear();
                 }
             }
-            catch (Exception Ex)
+            catch(Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
@@ -83,7 +87,7 @@ namespace Employee_System
                     Con.SetData(Query);
                     ShowDepartment();
                     MessageBox.Show("Updated...");
-                    DepNameTb.Text = "";
+                    clear();
                 }
             }
             catch (Exception Ex)
@@ -107,14 +111,20 @@ namespace Employee_System
                     Query = string.Format(Query, key);
                     Con.SetData(Query);
                     ShowDepartment();
-                    MessageBox.Show("Updated...");
-                    DepNameTb.Text = "";
+                    MessageBox.Show("deleted...");
+                    clear();
                 }
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
+        }
+
+        private void EmpLb_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            emp.Show();
         }
     }
 }

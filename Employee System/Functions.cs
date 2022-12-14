@@ -26,7 +26,7 @@ namespace Employee_System
         public DataTable GetData(string Query)
         {
             dt = new DataTable();
-            sda = new SqlDataAdapter(Query, connstr);
+            sda = new SqlDataAdapter(Query, Con);
             sda.Fill(dt);
             return dt;
         }
@@ -39,6 +39,7 @@ namespace Employee_System
             }
             Cmd.CommandText = Query;
             cnt = Cmd.ExecuteNonQuery();
+            Con.Close();
             return cnt;
         }
     }
