@@ -50,7 +50,7 @@ namespace Employee_System
         {
             try
             {
-                if (EmpNameTb.Text == "" || GenCb.SelectedIndex==-1 || DepCb.SelectedIndex==-1 || DailySalTb.Text=="")
+                if (EmpNameTb.Text == "" || GenCb.SelectedIndex == -1 || DepCb.SelectedIndex == -1 || DailySalTb.Text == "")
                 {
                     MessageBox.Show("Missing data");
                 }
@@ -66,6 +66,72 @@ namespace Employee_System
                     Query = string.Format(Query, Emp, Gen, Dep, DDb, jDate, Salary);
                     Con.SetData(Query);
                     MessageBox.Show("Added...");
+                    ShowEmp();
+                    clear();
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Departments DepForm = new Departments();
+            DepForm.Show();
+            this.Hide();
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EmpNameTb.Text == "" || GenCb.SelectedIndex == -1 || DepCb.SelectedIndex == -1 || DailySalTb.Text == "")
+                {
+                    MessageBox.Show("Missing data");
+                }
+                else
+                {
+                    string Emp = EmpNameTb.Text;
+                    string Gen = GenCb.SelectedItem.ToString();
+                    string Dep = DepCb.SelectedValue.ToString();
+                    string DDb = DDBTb.Value.ToString("yyyy-MM-dd");
+                    string jDate = JDate.Value.ToString("yyyy-MM-dd");
+                    int Salary = Convert.ToInt32(DailySalTb.Text);
+                    string Query = "Update into EmployeeTbl set EmpName ='{0}', EmpGen ='{1}',EmpDep ='{2}', EmpDDB='{3}',EmpJDate='{4}',EmpSal='{5}'where key={6}";
+                    Query = string.Format(Query, Emp, Gen, Dep, DDb, jDate, Salary, key);
+                    Con.SetData(Query);
+                    MessageBox.Show("Updated...");
+                    ShowEmp();
+                    clear();
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+        int key = 0;
+        private void Emplist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DelBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (key == 0)
+                {
+                    MessageBox.Show("Missing data");
+                }
+                else
+                {
+                    string Query = "Delete from EmployeeTbl where key={0}";
+                    Query = string.Format(Query, key);
+                    Con.SetData(Query);
+                    MessageBox.Show("Updated...");
                     ShowEmp();
                     clear();
                 }

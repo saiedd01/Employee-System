@@ -54,7 +54,7 @@ namespace Employee_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.DepLb = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -269,6 +269,7 @@ namespace Employee_System
             this.UpdateBtn.TabIndex = 36;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // panel2
             // 
@@ -300,16 +301,17 @@ namespace Employee_System
             this.label8.TabIndex = 39;
             this.label8.Text = "Employee";
             // 
-            // label10
+            // DepLb
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label10.Location = new System.Drawing.Point(687, 100);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 28);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Department";
+            this.DepLb.AutoSize = true;
+            this.DepLb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepLb.ForeColor = System.Drawing.Color.ForestGreen;
+            this.DepLb.Location = new System.Drawing.Point(687, 100);
+            this.DepLb.Name = "DepLb";
+            this.DepLb.Size = new System.Drawing.Size(122, 28);
+            this.DepLb.TabIndex = 41;
+            this.DepLb.Text = "Department";
+            this.DepLb.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox3
             // 
@@ -415,6 +417,7 @@ namespace Employee_System
             this.Emplist.ThemeStyle.RowsStyle.Height = 29;
             this.Emplist.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Red;
             this.Emplist.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Emplist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Emplist_CellContentClick);
             // 
             // DelBtn
             // 
@@ -428,6 +431,7 @@ namespace Employee_System
             this.DelBtn.TabIndex = 67;
             this.DelBtn.Text = "Delete";
             this.DelBtn.UseVisualStyleBackColor = false;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
             // Employee
             // 
@@ -441,7 +445,7 @@ namespace Employee_System
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DepLb);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox2);
@@ -503,7 +507,7 @@ namespace Employee_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label DepLb;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox4;
