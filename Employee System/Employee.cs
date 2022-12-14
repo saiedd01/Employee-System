@@ -59,8 +59,8 @@ namespace Employee_System
                     string Emp = EmpNameTb.Text;
                     string Gen = GenCb.SelectedItem.ToString();
                     string Dep = DepCb.SelectedValue.ToString();
-                    string DDb = DDBTb.Value.ToString();
-                    string jDate = JDate.Value.ToString();
+                    string DDb = DDBTb.Value.ToString("yyyy-MM-dd");
+                    string jDate = JDate.Value.ToString("yyyy-MM-dd");
                     int Salary = Convert.ToInt32(DailySalTb.Text);
                     string Query = "insert into EmployeeTbl values ('{0}','{1}','{2}','{3}','{4}','{5}')";
                     Query = string.Format(Query, Emp, Gen, Dep, DDb, jDate, Salary);

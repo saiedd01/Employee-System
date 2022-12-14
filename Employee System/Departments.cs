@@ -125,6 +125,7 @@ namespace Employee_System
         {
             Employee emp = new Employee();
             emp.Show();
+            this.Hide();
         }
     }
 }
