@@ -45,7 +45,7 @@ namespace Employee_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.SalLb = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -235,16 +235,17 @@ namespace Employee_System
             this.pictureBox5.TabIndex = 63;
             this.pictureBox5.TabStop = false;
             // 
-            // label11
+            // SalLb
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label11.Location = new System.Drawing.Point(840, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 28);
-            this.label11.TabIndex = 62;
-            this.label11.Text = "Salary";
+            this.SalLb.AutoSize = true;
+            this.SalLb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalLb.ForeColor = System.Drawing.Color.ForestGreen;
+            this.SalLb.Location = new System.Drawing.Point(840, 100);
+            this.SalLb.Name = "SalLb";
+            this.SalLb.Size = new System.Drawing.Size(66, 28);
+            this.SalLb.TabIndex = 62;
+            this.SalLb.Text = "Salary";
+            this.SalLb.Click += new System.EventHandler(this.SalLb_Click);
             // 
             // pictureBox4
             // 
@@ -255,6 +256,7 @@ namespace Employee_System
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 61;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label10
             // 
@@ -333,7 +335,7 @@ namespace Employee_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.SalLb);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox3);
@@ -380,7 +382,7 @@ namespace Employee_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label SalLb;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox3;

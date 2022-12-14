@@ -12,9 +12,36 @@ namespace Employee_System
 {
     public partial class Salaries : Form
     {
+        Functions Con;
         public Salaries()
         {
             InitializeComponent();
+            Con = new Functions();
+            ShowSalary();
+            GetEmp();
+        }
+        private void ShowSalary()
+        {
+            string Query = "Select * from SalaryTbl";
+            Salarylist.DataSource = Con.GetData(Query);
+        }
+
+        private void GetEmp()
+        {
+            string Query = "Select * from EmployeeTbl";
+            EmpCb.DisplayMember = Con.GetData(Query).Columns["EmpName"].ToString();
+            EmpCb.ValueMember = Con.GetData(Query).Columns["EmpId"].ToString();
+            EmpCb.DataSource = Con.GetData(Query);
+        }
+
+        private void Salaries_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

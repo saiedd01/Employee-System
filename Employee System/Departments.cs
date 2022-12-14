@@ -127,5 +127,19 @@ namespace Employee_System
             emp.Show();
             this.Hide();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Salaries Sal = new Salaries();
+            Sal.Show();
+            this.Hide();
+        }
+
+        private void SalLb_Click(object sender, EventArgs e)
+        {
+            Salaries Sal = new Salaries();
+            Sal.Show();
+            this.Hide();
+        }
     }
 }

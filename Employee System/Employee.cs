@@ -115,7 +115,20 @@ namespace Employee_System
         int key = 0;
         private void Emplist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            EmpNameTb.Text = Emplist.SelectedRows[0].Cells[1].Value.ToString();
+            GenCb.Text = Emplist.SelectedRows[0].Cells[2].Value.ToString();
+            DepCb.SelectedValue = Emplist.SelectedRows[0].Cells[3].Value.ToString();
+            DDBTb.Text = Emplist.SelectedRows[0].Cells[4].Value.ToString();
+            JDate.Text = Emplist.SelectedRows[0].Cells[5].Value.ToString();
+            DailySalTb.Text = Emplist.SelectedRows[0].Cells[6].Value.ToString();
+            if (EmpNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(Emplist.SelectedRows[0].Cells[0].Value.ToString());
+            }
         }
 
         private void DelBtn_Click(object sender, EventArgs e)
