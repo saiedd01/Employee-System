@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Employee_System
 {
-    public partial class Departments : Form
+    public partial class Salaries : Form
     {
-        public Departments()
+        public Salaries()
         {
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
