@@ -101,5 +101,26 @@ namespace Employee_System
         {
             GetSal();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Employee obj = new Employee();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void DepLb_Click(object sender, EventArgs e)
+        {
+            Departments DepForm = new Departments();
+            DepForm.Show();
+            this.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Login LogForm = new Login();
+            LogForm.Show();
+            this.Hide();
+        }
     }
 }
