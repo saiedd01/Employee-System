@@ -23,7 +23,7 @@ namespace Employee_System
             {
                 MessageBox.Show("Missing Data !!!!");
             }
-            else if (usernameTb.Text == "Admin" && passwordTb.Text == "admin")
+            else if (usernameTb.Text == "22" && passwordTb.Text == "11")
             {
                 Employee Empform = new Employee();
                 Empform.Show();
@@ -34,5 +34,6 @@ namespace Employee_System
                 usernameTb.Text = "";
                 passwordTb.Text = "";
             }
+        }
     }
 }
