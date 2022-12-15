@@ -27,6 +27,35 @@ namespace Employee_System
             EmpCb.ValueMember = Con.GetData(Query).Columns["EmpId"].ToString();
             EmpCb.DataSource = Con.GetData(Query);
         }
+        int DSal = 0;
+        string period = "";
+        private void GetSal()
+        {
+            string Query = "select * from EmployeeTbl where Empid = {0}";
+            Query = string.Format(Query, EmpCb.SelectedValue.ToString());
+            foreach (DataRow dr in Con.GetData(Query).Rows)
+            {
+                DSal = Convert.ToInt32(dr["EmpSal"].ToString());
+            }
+
+            // MessageBox.Show("" + DSal);
+            // EmpCb.DataSource = Con.GetData(Query);
+
+            if (DaysTb.Text == "")
+            {
+                AmountTb.Text = "EGP  " + (d * DSal);
+            }
+            else if (Convert.ToInt32(DaysTb.Text) > 31)
+            {
+                MessageBox.Show("Days Can Not be Greater than 31");
+            }
+            else
+            {
+                d = Convert.ToInt32(DaysTb.Text);
+                AmountTb.Text = "EGP  " + (d * DSal);
+            }
+        }
+        int d = 1;
         private void ShowSal()
         {
             string Query = "Select * from Salary";
@@ -34,6 +63,11 @@ namespace Employee_System
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
         {
 
         }
