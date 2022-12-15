@@ -155,12 +155,12 @@ namespace Employee_System
             }
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-            Salaries SalForm = new Salaries();
-            SalForm.Show();
-            this.Hide();
-        }
+        //private void label11_Click(object sender, EventArgs e)
+        //{
+        //    Salaries SalForm = new Salaries();
+        //    SalForm.Show();
+        //    this.Hide();
+        //}
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {

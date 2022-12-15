@@ -129,7 +129,7 @@ namespace Employee_System
             this.Deplist.RowHeadersVisible = false;
             this.Deplist.RowHeadersWidth = 51;
             this.Deplist.RowTemplate.Height = 29;
-            this.Deplist.Size = new System.Drawing.Size(1085, 464);
+            this.Deplist.Size = new System.Drawing.Size(1059, 535);
             this.Deplist.TabIndex = 49;
             this.Deplist.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.Deplist.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -190,7 +190,7 @@ namespace Employee_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1448, 82);
+            this.panel1.Size = new System.Drawing.Size(1458, 82);
             this.panel1.TabIndex = 37;
             // 
             // label4
@@ -209,9 +209,9 @@ namespace Employee_System
             // 
             this.panel2.BackColor = System.Drawing.Color.ForestGreen;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 773);
+            this.panel2.Location = new System.Drawing.Point(0, 837);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1448, 19);
+            this.panel2.Size = new System.Drawing.Size(1458, 19);
             this.panel2.TabIndex = 56;
             // 
             // label12
@@ -330,7 +330,7 @@ namespace Employee_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1448, 792);
+            this.ClientSize = new System.Drawing.Size(1458, 856);
             this.Controls.Add(this.DelBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
