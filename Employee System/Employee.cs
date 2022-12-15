@@ -99,7 +99,7 @@ namespace Employee_System
                     string DDb = DDBTb.Value.ToString("yyyy-MM-dd");
                     string jDate = JDate.Value.ToString("yyyy-MM-dd");
                     int Salary = Convert.ToInt32(DailySalTb.Text);
-                    string Query = "Update into EmployeeTbl set EmpName ='{0}', EmpGen ='{1}',EmpDep ='{2}', EmpDDB='{3}',EmpJDate='{4}',EmpSal='{5}'where key={6}";
+                    string Query = "Update EmployeeTbl set EmpName ='{0}', EmpGen ='{1}',EmpDep ='{2}', EmpDDB='{3}',EmpJDate='{4}',EmpSal='{5}'where EmpId={6}";
                     Query = string.Format(Query, Emp, Gen, Dep, DDb, jDate, Salary, key);
                     Con.SetData(Query);
                     MessageBox.Show("Updated...");
@@ -141,10 +141,10 @@ namespace Employee_System
                 }
                 else
                 {
-                    string Query = "Delete from EmployeeTbl where key={0}";
+                    string Query = "Delete from EmployeeTbl where EmpId={0}";
                     Query = string.Format(Query, key);
                     Con.SetData(Query);
-                    MessageBox.Show("Updated...");
+                    MessageBox.Show("Deleted...");
                     ShowEmp();
                     clear();
                 }
@@ -153,6 +153,34 @@ namespace Employee_System
             {
                 MessageBox.Show(Ex.Message);
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Salaries SalForm = new Salaries();
+            SalForm.Show();
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login LogForm = new Login();
+            LogForm.Show();
+            this.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Login LogForm = new Login();
+            LogForm.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Departments DepForm = new Departments();
+            DepForm.Show();
+            this.Hide();
         }
     }
 }

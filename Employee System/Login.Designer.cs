@@ -138,6 +138,7 @@ namespace Employee_System
             this.LoginBtn.TabIndex = 11;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = false;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // guna2Elipse1
             // 

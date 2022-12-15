@@ -16,5 +16,23 @@ namespace Employee_System
         {
             InitializeComponent();
         }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            if (usernameTb.Text == "" || passwordTb.Text == "")
+            {
+                MessageBox.Show("Missing Data !!!!");
+            }
+            else if (usernameTb.Text == "Admin" && passwordTb.Text == "admin")
+            {
+                Employee Empform = new Employee();
+                Empform.Show();
+                this.Hide();
+            }
+            else
+            {
+                usernameTb.Text = "";
+                passwordTb.Text = "";
+            }
     }
 }

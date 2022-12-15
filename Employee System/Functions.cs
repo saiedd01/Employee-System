@@ -37,6 +37,7 @@ namespace Employee_System
             {
                 Con.Open();
             }
+            Console.WriteLine(Query);
             Cmd.CommandText = Query;
             cnt = Cmd.ExecuteNonQuery();
             Con.Close();

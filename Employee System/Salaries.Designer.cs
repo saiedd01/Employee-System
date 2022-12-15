@@ -30,15 +30,13 @@ namespace Employee_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salaries));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.SalaryTb = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.PeriodTb = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +54,10 @@ namespace Employee_System
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Salarylist = new Guna.UI2.WinForms.Guna2DataGridView();
             this.DelBtn = new System.Windows.Forms.Button();
+            this.AmountTb = new System.Windows.Forms.TextBox();
+            this.Salarylist = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Periodfin = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -112,35 +112,6 @@ namespace Employee_System
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // SalaryTb
-            // 
-            this.SalaryTb.Checked = true;
-            this.SalaryTb.FillColor = System.Drawing.Color.ForestGreen;
-            this.SalaryTb.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SalaryTb.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.SalaryTb.Location = new System.Drawing.Point(29, 490);
-            this.SalaryTb.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.SalaryTb.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.SalaryTb.Name = "SalaryTb";
-            this.SalaryTb.Size = new System.Drawing.Size(260, 36);
-            this.SalaryTb.TabIndex = 52;
-            this.SalaryTb.Value = new System.DateTime(2022, 12, 14, 0, 53, 9, 377);
-            // 
-            // PeriodTb
-            // 
-            this.PeriodTb.BackColor = System.Drawing.Color.Maroon;
-            this.PeriodTb.Checked = true;
-            this.PeriodTb.FillColor = System.Drawing.Color.ForestGreen;
-            this.PeriodTb.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.PeriodTb.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.PeriodTb.Location = new System.Drawing.Point(29, 417);
-            this.PeriodTb.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.PeriodTb.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.PeriodTb.Name = "PeriodTb";
-            this.PeriodTb.Size = new System.Drawing.Size(260, 36);
-            this.PeriodTb.TabIndex = 51;
-            this.PeriodTb.Value = new System.DateTime(2022, 12, 14, 0, 53, 9, 377);
             // 
             // label6
             // 
@@ -214,11 +185,12 @@ namespace Employee_System
             this.EmpCb.Name = "EmpCb";
             this.EmpCb.Size = new System.Drawing.Size(260, 33);
             this.EmpCb.TabIndex = 57;
+            this.EmpCb.SelectionChangeCommitted += new System.EventHandler(this.EmpCb_SelectionChangeCommitted);
             // 
             // DaysTb
             // 
             this.DaysTb.Font = new System.Drawing.Font("Segoe UI Semibold", 12.2F, System.Drawing.FontStyle.Bold);
-            this.DaysTb.Location = new System.Drawing.Point(29, 337);
+            this.DaysTb.Location = new System.Drawing.Point(29, 336);
             this.DaysTb.Name = "DaysTb";
             this.DaysTb.Size = new System.Drawing.Size(260, 35);
             this.DaysTb.TabIndex = 58;
@@ -275,6 +247,7 @@ namespace Employee_System
             this.label10.Size = new System.Drawing.Size(122, 28);
             this.label10.TabIndex = 62;
             this.label10.Text = "Department";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox3
             // 
@@ -285,6 +258,7 @@ namespace Employee_System
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 61;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label8
             // 
@@ -296,6 +270,7 @@ namespace Employee_System
             this.label8.Size = new System.Drawing.Size(101, 28);
             this.label8.TabIndex = 60;
             this.label8.Text = "Employee";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox2
             // 
@@ -306,6 +281,7 @@ namespace Employee_System
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 59;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
@@ -317,37 +293,62 @@ namespace Employee_System
             this.label2.TabIndex = 67;
             this.label2.Text = " Manage Salary";
             // 
+            // DelBtn
+            // 
+            this.DelBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.DelBtn.FlatAppearance.BorderSize = 0;
+            this.DelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DelBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelBtn.Location = new System.Drawing.Point(115, 708);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(110, 41);
+            this.DelBtn.TabIndex = 69;
+            this.DelBtn.Text = "Delete";
+            this.DelBtn.UseVisualStyleBackColor = false;
+            // 
+            // AmountTb
+            // 
+            this.AmountTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AmountTb.Enabled = false;
+            this.AmountTb.Font = new System.Drawing.Font("Segoe UI Semibold", 12.2F, System.Drawing.FontStyle.Bold);
+            this.AmountTb.ForeColor = System.Drawing.Color.ForestGreen;
+            this.AmountTb.Location = new System.Drawing.Point(29, 490);
+            this.AmountTb.Name = "AmountTb";
+            this.AmountTb.Size = new System.Drawing.Size(260, 28);
+            this.AmountTb.TabIndex = 70;
+            this.AmountTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Salarylist
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Salarylist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Salarylist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Salarylist.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Salarylist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Salarylist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Salarylist.ColumnHeadersHeight = 33;
             this.Salarylist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Salarylist.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Salarylist.DefaultCellStyle = dataGridViewCellStyle6;
             this.Salarylist.GridColor = System.Drawing.Color.Black;
-            this.Salarylist.Location = new System.Drawing.Point(327, 229);
+            this.Salarylist.Location = new System.Drawing.Point(316, 229);
             this.Salarylist.Name = "Salarylist";
             this.Salarylist.RowHeadersVisible = false;
             this.Salarylist.RowHeadersWidth = 51;
             this.Salarylist.RowTemplate.Height = 29;
-            this.Salarylist.Size = new System.Drawing.Size(1091, 520);
-            this.Salarylist.TabIndex = 68;
+            this.Salarylist.Size = new System.Drawing.Size(1085, 464);
+            this.Salarylist.TabIndex = 71;
             this.Salarylist.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.Salarylist.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.Salarylist.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -370,18 +371,12 @@ namespace Employee_System
             this.Salarylist.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Red;
             this.Salarylist.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // DelBtn
+            // Periodfin
             // 
-            this.DelBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.DelBtn.FlatAppearance.BorderSize = 0;
-            this.DelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DelBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DelBtn.Location = new System.Drawing.Point(115, 708);
-            this.DelBtn.Name = "DelBtn";
-            this.DelBtn.Size = new System.Drawing.Size(110, 41);
-            this.DelBtn.TabIndex = 69;
-            this.DelBtn.Text = "Delete";
-            this.DelBtn.UseVisualStyleBackColor = false;
+            this.Periodfin.Location = new System.Drawing.Point(29, 418);
+            this.Periodfin.Name = "Periodfin";
+            this.Periodfin.Size = new System.Drawing.Size(260, 34);
+            this.Periodfin.TabIndex = 72;
             // 
             // Salaries
             // 
@@ -389,8 +384,10 @@ namespace Employee_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1443, 856);
-            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.Periodfin);
             this.Controls.Add(this.Salarylist);
+            this.Controls.Add(this.AmountTb);
+            this.Controls.Add(this.DelBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox5);
@@ -406,8 +403,6 @@ namespace Employee_System
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.SalaryTb);
-            this.Controls.Add(this.PeriodTb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -438,8 +433,6 @@ namespace Employee_System
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button AddBtn;
-        private Guna.UI2.WinForms.Guna2DateTimePicker SalaryTb;
-        private Guna.UI2.WinForms.Guna2DateTimePicker PeriodTb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -457,7 +450,9 @@ namespace Employee_System
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2DataGridView Salarylist;
         private System.Windows.Forms.Button DelBtn;
+        private System.Windows.Forms.TextBox AmountTb;
+        private Guna.UI2.WinForms.Guna2DataGridView Salarylist;
+        private System.Windows.Forms.DateTimePicker Periodfin;
     }
 }
