@@ -18,9 +18,15 @@ namespace Employee_System
             InitializeComponent();
             Con = new Functions();
             ShowSal();
-            
+            GetEmp();
         }
-
+        private void GetEmp()
+        {
+            string Query = "Select * from EmployeeTbl";
+            EmpCb.DisplayMember = Con.GetData(Query).Columns["EmpName"].ToString();
+            EmpCb.ValueMember = Con.GetData(Query).Columns["EmpId"].ToString();
+            EmpCb.DataSource = Con.GetData(Query);
+        }
         private void ShowSal()
         {
             string Query = "Select * from Salary";
